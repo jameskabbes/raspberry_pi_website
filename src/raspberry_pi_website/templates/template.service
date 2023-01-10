@@ -1,0 +1,11 @@
+[Unit]
+Description=uWSGI instance to serve j.kabb.io
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/j_kabb_io
+ExecStart=/home/pi/j_kabb_io/run_live_server.sh
+
+[Install]
+WantedBy=multi-user.target
