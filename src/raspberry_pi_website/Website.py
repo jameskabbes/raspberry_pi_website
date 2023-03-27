@@ -1,10 +1,10 @@
-import repository_generator
+import kabbes_repository_generator
 import raspberry_pi_website
 
-class Website( repository_generator.RepositoryGenerator ):
+class Website( kabbes_repository_generator.RepositoryGenerator ):
 
     def __init__( self ):
-        repository_generator.RepositoryGenerator.__init__( self )
+        kabbes_repository_generator.RepositoryGenerator.__init__( self )
 
         """
         import subprocess
