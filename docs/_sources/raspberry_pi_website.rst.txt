@@ -1,0 +1,37 @@
+raspberry\_pi\_website package
+==============================
+
+Submodules
+----------
+
+raspberry\_pi\_website.Client module
+------------------------------------
+
+.. automodule:: raspberry_pi_website.Client
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+raspberry\_pi\_website.Service module
+-------------------------------------
+
+.. automodule:: raspberry_pi_website.Service
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+raspberry\_pi\_website.Website module
+-------------------------------------
+
+.. automodule:: raspberry_pi_website.Website
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: raspberry_pi_website
+   :members:
+   :undoc-members:
+   :show-inheritance:
