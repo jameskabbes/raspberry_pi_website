@@ -1,5 +1,8 @@
-[GitHub Pages](https://jameskabbes.github.io/raspberry_pi_website)
 # raspberry_pi_website
+Instructions for turning your raspberry pi into a web server
+
+[Documentation](https://jameskabbes.github.io/raspberry_pi_website)
+
 
 # Reference
 
