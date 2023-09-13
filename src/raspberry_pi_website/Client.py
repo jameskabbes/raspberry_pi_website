@@ -1,7 +1,7 @@
 import raspberry_pi_website
 import kabbes_repository_generator
 import kabbes_user_client
-import py_starter as ps
+import py_seedlings as ps
 
 class Client( raspberry_pi_website.Website, kabbes_repository_generator.Client ):
 

@@ -18,7 +18,7 @@ Is a reverse proxy that can dispatch http request inbound to port 80 and 443 to 
 
 The configuration for it can be viewed / changed here:
 ```
-sudo vim /etc/caddy/Caddyfile
+sudo nano /etc/caddy/Caddyfile
 ```
 
 And after you edit it, you need to restart / reload Caddy like. This is the same as any other systemd service.
@@ -33,14 +33,19 @@ You can view the logs of Caddy like any other systemd service, with the journalc
 sudo journalctl -f -u caddy
 ```
 
+## Setting up venv
+
+`python -m venv venv`
+`source venv/bin/activate`
+`pip install -r requirements.txt`
+ 
 ## Adding New Service
 
-sudo nano /etc/systemd/system/<filename>.service
-sudo systemctl enable personal_blog.service
+sudo ln -s /home/pi/Repos/<repo>/<repo>.service /etc/systemd/system/<repo>.service
 
-sudo nano /etc/systemd/system/personal_blog.service
+## Enabling the Service on bootup
 
-chmod a+x run_live_server.sh
+sudo ln -s /home/pi/Repos/<repo>/<repo>.service /etc/systemd/system/multi-user.target.wants/<repo>.service
 
 ## Service Template
 

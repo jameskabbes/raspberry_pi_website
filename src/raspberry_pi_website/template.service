@@ -1,11 +1,12 @@
 [Unit]
-Description=uWSGI instance to serve j.kabb.io
+Description=gunicorn instance to serve website_test
 After=network.target
 
 [Service]
 User=pi
-WorkingDirectory=/home/pi/j_kabb_io
-ExecStart=/home/pi/j_kabb_io/run_live_server.sh
+WorkingDirectory=/home/pi/Repos/website_test
+Environment="PATH=/home/pi/Repos/website_test/venv/bin"
+ExecStart=/home/pi/Repos/website_test/venv/bin/gunicorn -b 0.0.0.0:8085 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
