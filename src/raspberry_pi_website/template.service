@@ -1,12 +1,12 @@
 [Unit]
-Description=gunicorn instance to serve website_test
+Description=gunicorn instance to serve <service_name>
 After=network.target
 
 [Service]
 User=pi
-WorkingDirectory=/home/pi/Repos/website_test
-Environment="PATH=/home/pi/Repos/website_test/venv/bin"
-ExecStart=/home/pi/Repos/website_test/venv/bin/gunicorn -b 0.0.0.0:8085 wsgi:app
+WorkingDirectory=/path/to/working/dir
+Environment="PATH=/path/to/environment"
+ExecStart=/path/to/gunicorn -b 0.0.0.0:8080 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
