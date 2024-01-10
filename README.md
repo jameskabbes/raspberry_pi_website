@@ -1,4 +1,5 @@
 # raspberry_pi_website
+
 Instructions for turning your raspberry pi into a web server
 
 # Reference Materials
@@ -28,44 +29,49 @@ You can view the logs of Caddy like any other systemd service, with the journalc
 sudo journalctl -f -u caddy
 ```
 
-### Hosting a Static Site 
+### Hosting a Static Site
 
 www.website.com {
-  encode zstd gzip
-  try_files {path} /
-  root * /path/to/app/dist/folder
-  file_server
+encode zstd gzip
+try_files {path} /
+root \* /path/to/app/dist/folder
+file_server
 }
 
 ### Reverse Proxy to Localhost
+
 www.website.com {
-  encode zstd gzip
-  reverse_proxy localhost:8080
+encode zstd gzip
+reverse_proxy localhost:8080
 }
 
 ## Raspberry Pi systemd service
 
 ### Template
+
 Found in `notes/template.service`
 
 ### Restarting Service
+
 sudo systemctl start <service>
 sudo systemctl stop <service>
 
 ### See Service Logs
+
 sudo journalctl -f -u <service>
 
 ### See Service Status
+
 sudo systemctl status <service>
 
-
 ### Adding New Service
+
 sudo ln -s /path/to/<service>.service /etc/systemd/system/<service>.service
 
 ### Enabling the Service on bootup
+
 sudo ln -s /path/to/<service>.service /etc/systemd/system/multi-user.target.wants/<service>.service
 
- 
 ## Python Web Server
 
 ### Make Virtual Environment
@@ -75,10 +81,11 @@ sudo ln -s /path/to/<service>.service /etc/systemd/system/multi-user.target.want
 `pip install -r requirements.txt`
 
 ### Gunicorn
+
 [https://gunicorn.org]() <br>
 
 `gunicorn -b 0.0.0.0:8080 wsgi:app`
 
-
 # Author
+
 James Kabbes
