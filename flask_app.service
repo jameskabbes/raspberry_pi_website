@@ -1,0 +1,12 @@
+[Unit]
+Description=gunicorn instance to serve {SERVICE_NAME}
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/path/to/working/dir
+Environment="PATH=/path/to/venv/bin"
+ExecStart=/path/to/gunicorn -b 0.0.0.0:{PORT} wsgi:app
+
+[Install]
+WantedBy=multi-user.target

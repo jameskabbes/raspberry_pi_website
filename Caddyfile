@@ -1,0 +1,26 @@
+www.example.com {
+    redir https://example.com{uri}
+}
+
+example.com {
+    encode zstd gzip
+    reverse_proxy localhost:8080
+}
+
+example2.com {
+  encode zstd gzip
+
+  handle_path /api {
+    reverse_proxy localhost:8081
+  }
+
+  handle_path /api/* {
+    reverse_proxy localhost:8081
+  }
+
+  file_server {
+    root /path/to/static_files
+  }
+
+}
+
