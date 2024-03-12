@@ -13,13 +13,21 @@ Open-source web server with automatic https written in Go.
 2. Add the `caddy.service` file as a system service.
 3. Enable the service to run on startup
 
+```
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo tee /etc/apt/trusted.gpg.d/caddy-stable.asc
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+```
+
 ### Edit Caddyfile
 
 ```
 sudo nano /etc/caddy/Caddyfile
 ```
 
-Use `Caddyfile` template in repo to edit `etc/caddy/Caddyfile`
+Use `Caddyfile` template in repo to edit `etc/caddy/Caddyfile` or in `/usr/local/bin/caddy`
 
 ## ufw
 
